@@ -3,6 +3,7 @@ package com.blogger.blog.service;
 import java.util.List;
 
 import com.blogger.blog.dto.BlogDto;
+import com.blogger.blog.dto.LikeDislikeDto;
 
 public interface BlogService {
 
@@ -15,5 +16,9 @@ public interface BlogService {
     BlogDto updateBlog(BlogDto blogDto);
 
     BlogDto insertBlog(BlogDto blogDto);
+
+    boolean likeBlog(LikeDislikeDto likeDislikeDto);
+    
+    boolean disLikeBlog(LikeDislikeDto likeDislikeDto);
 
 }

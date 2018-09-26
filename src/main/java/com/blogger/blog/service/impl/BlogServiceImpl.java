@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.blogger.blog.document.Blog;
 import com.blogger.blog.dto.BlogDto;
+import com.blogger.blog.dto.LikeDislikeDto;
 import com.blogger.blog.repository.BlogRepository;
 import com.blogger.blog.service.BlogService;
 
@@ -62,6 +63,17 @@ public class BlogServiceImpl implements BlogService {
         blogRepository.insert(blog);
         blogDto.setId(blog.getId());
         return blogDto;
+    }
+
+    @Override
+    public boolean likeBlog(LikeDislikeDto likeDislikeDto) {
+//        blogRepository.find
+        return false;
+    }
+
+    @Override
+    public boolean disLikeBlog(LikeDislikeDto likeDislikeDto) {
+        return false;
     }
 
 }

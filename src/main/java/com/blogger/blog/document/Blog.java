@@ -1,6 +1,7 @@
 package com.blogger.blog.document;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -17,9 +18,9 @@ public class Blog extends BaseDocument {
 
     private Date updatedOn;
 
-    private int likes;
+    private List<String> usersLiked;
 
-    private int dislikes;
+    private List<String> usersDisliked;
 
     public Blog() {
         super();
@@ -27,15 +28,16 @@ public class Blog extends BaseDocument {
 
     public Blog(final String writerId, final String title,
             final String description, final Date createdOn,
-            final Date updatedOn, final int likes, final int dislikes) {
+            final Date updatedOn, final List<String> usersLiked,
+            final List<String> usersDisliked) {
         super();
         this.writerId = writerId;
         this.title = title;
         this.description = description;
         this.createdOn = createdOn;
         this.updatedOn = updatedOn;
-        this.likes = likes;
-        this.dislikes = dislikes;
+        this.usersLiked = usersLiked;
+        this.usersDisliked = usersDisliked;
     }
 
     public String getWriterId() {
@@ -78,20 +80,20 @@ public class Blog extends BaseDocument {
         this.updatedOn = updatedOn;
     }
 
-    public int getLikes() {
-        return likes;
+    public List<String> getUsersLiked() {
+        return usersLiked;
     }
 
-    public void setLikes(final int likes) {
-        this.likes = likes;
+    public void setUsersLiked(final List<String> usersLiked) {
+        this.usersLiked = usersLiked;
     }
 
-    public int getDislikes() {
-        return dislikes;
+    public List<String> getUsersDisliked() {
+        return usersDisliked;
     }
 
-    public void setDislikes(final int dislikes) {
-        this.dislikes = dislikes;
+    public void setUsersDisliked(final List<String> usersDisliked) {
+        this.usersDisliked = usersDisliked;
     }
 
 }

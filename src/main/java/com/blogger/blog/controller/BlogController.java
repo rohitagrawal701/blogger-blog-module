@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.blogger.blog.dto.BlogDto;
+import com.blogger.blog.dto.LikeDislikeDto;
 import com.blogger.blog.response.RESTResponse;
 import com.blogger.blog.service.BlogService;
 
@@ -51,4 +52,9 @@ public class BlogController {
         return RESTResponse.ok(blogService.updateBlog(blogDto));
     }
 
+    @RequestMapping(value = "/blog/like", method = RequestMethod.PUT, produces = {
+            MediaType.APPLICATION_JSON_VALUE})
+    public RESTResponse likeBlog(@RequestBody final LikeDislikeDto likeDislikeDto) {
+        return RESTResponse.ok(blogService.likeBlog(likeDislikeDto));
+    }
 }

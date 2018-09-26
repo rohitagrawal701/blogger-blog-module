@@ -1,6 +1,7 @@
 package com.blogger.blog.dto;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class BlogDto implements Serializable {
 
@@ -17,22 +18,23 @@ public class BlogDto implements Serializable {
 
     private String description;
 
-    private int likes;
+    private List<String> usersLiked;
 
-    private int dislikes;
+    private List<String> usersDisliked;
 
     public BlogDto() {
     }
 
     public BlogDto(final String id, final String writerId, final String title,
-            final String description, final int likes, final int dislikes) {
+            final String description, final List<String> usersLiked,
+            final List<String> usersDisliked) {
         super();
         this.id = id;
         this.writerId = writerId;
         this.title = title;
         this.description = description;
-        this.likes = likes;
-        this.dislikes = dislikes;
+        this.usersLiked = usersLiked;
+        this.usersDisliked = usersDisliked;
     }
 
     public String getId() {
@@ -67,19 +69,20 @@ public class BlogDto implements Serializable {
         this.description = description;
     }
 
-    public int getLikes() {
-        return likes;
+    public List<String> getUsersLiked() {
+        return usersLiked;
     }
 
-    public void setLikes(final int likes) {
-        this.likes = likes;
+    public void setUsersLiked(final List<String> usersLiked) {
+        this.usersLiked = usersLiked;
     }
 
-    public int getDislikes() {
-        return dislikes;
+    public List<String> getUsersDisliked() {
+        return usersDisliked;
     }
 
-    public void setDislikes(final int dislikes) {
-        this.dislikes = dislikes;
+    public void setUsersDisliked(final List<String> usersDisliked) {
+        this.usersDisliked = usersDisliked;
     }
+
 }
